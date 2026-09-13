@@ -72,7 +72,7 @@ function OperatorApp() {
   const [lightbox, setLightbox] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!selectedWorkerId && workers.length > 0) setSelectedWorkerId(workers[0].id);
+    if (!selectedWorkerId && workers[0]) setSelectedWorkerId(workers[0].id);
   }, [workers, selectedWorkerId]);
 
   useEffect(() => {
