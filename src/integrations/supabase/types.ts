@@ -14,7 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      tasks: {
+        Row: {
+          assigned_to: string[]
+          completed_at: string | null
+          created_at: string
+          description: string | null
+          id: string
+          image_url: string | null
+          priority: string
+          status: string
+          title: string
+        }
+        Insert: {
+          assigned_to?: string[]
+          completed_at?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          priority?: string
+          status?: string
+          title: string
+        }
+        Update: {
+          assigned_to?: string[]
+          completed_at?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          priority?: string
+          status?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      workers: {
+        Row: {
+          avatar: string | null
+          created_at: string
+          id: string
+          name: string
+        }
+        Insert: {
+          avatar?: string | null
+          created_at?: string
+          id?: string
+          name: string
+        }
+        Update: {
+          avatar?: string | null
+          created_at?: string
+          id?: string
+          name?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
